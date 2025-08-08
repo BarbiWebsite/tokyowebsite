@@ -12,6 +12,9 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            /* Added a soft, girly gradient for the background */
+            background-image: linear-gradient(to bottom, #fde4e4, #fff0f0);
+            background-attachment: fixed; /* Ensures the gradient stays in place on scroll */
         }
     </style>
 </head>
@@ -27,7 +30,7 @@
                 <a href="#about" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-about">Rólunk</a>
                 <a href="#services" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-services">Szolgáltatások</a>
                 <a href="#gallery" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-gallery">Galéria</a>
-                <a href="#contact" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-contact">Kapcsolat</a>
+                <a href="#faq" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-faq">GYIK</a>
             </div>
             <!-- Language and Mobile Menu -->
             <div class="flex items-center space-x-4">
@@ -44,7 +47,7 @@
             <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-about">Rólunk</a>
             <a href="#services" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-services">Szolgáltatások</a>
             <a href="#gallery" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-gallery">Galéria</a>
-            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-contact">Kapcsolat</a>
+                <a href="#faq" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-faq">GYIK</a>
         </div>
     </header>
 
@@ -55,8 +58,8 @@
             <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-100" data-lang-key="hero-subheading">
                 Tervezd meg és készítsd el saját, egyedi, koreai stílusú telefontokodat a szórakoztató és barátságos műhelyünkben.
             </p>
-            <a href="#contact" class="bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 transform hover:scale-105 transition-all duration-300" data-lang-key="hero-button">
-                Foglalj időpontot
+            <a href="#about" class="bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 transform hover:scale-105 transition-all duration-300" data-lang-key="hero-button">
+                Tudj meg többet
             </a>
         </div>
     </section>
@@ -67,7 +70,7 @@
             <div class="md:w-1/2 md:pr-10">
                 <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-4" data-lang-key="about-heading">Rólunk</h2>
                 <p class="text-gray-700 text-lg" data-lang-key="about-text">
-                    A Tokyo egy kreatív hely, ahol személyre szabott kiegészítőket készíthetsz. A pezsgő és művészi szöuli kultúra inspirálta, minden eszközt, anyagot és útmutatást biztosítunk, amire szükséged van egy egyedi telefontok elkészítéséhez, amely tökéletesen kifejezi a stílusodat. Hozd el barátaidat, családodat, vagy gyere egyedül, és találkozz más kézműves-kedvelőkkel!
+                    Szia! Mi vagyunk Magyar Barbi és Csecse Attila, a Tokyo megálmodói. Koreában töltött időnk alatt beleszerettünk az ottani, személyre szabott telefontok-készítő műhelyek hangulatába és kreatív élményébe. Úgy éreztük, ezt a szórakoztató és egyedi lehetőséget nektek is látnotok kell! Ezért döntöttünk úgy, hogy elhozzuk ezt a koncepciót Budapestre. Gyere el és alkoss velünk egy olyan telefontokot, ami valóban rólad szól!
                 </p>
             </div>
             <div class="md:w-1/2 mt-8 md:mt-0">
@@ -122,42 +125,33 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-white py-20">
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-white py-20">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-12" data-lang-key="contact-heading">Kapcsolatfelvétel</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Contact Form -->
-                <div>
-                    <form id="contact-form" class="space-y-6 text-left">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-semibold mb-1" data-lang-key="form-name">Név</label>
-                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 font-semibold mb-1" data-lang-key="form-email">E-mail</label>
-                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 font-semibold mb-1" data-lang-key="form-message">Üzenet</label>
-                            <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-pink-500 text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-pink-600 transform hover:scale-105 transition-all duration-300" data-lang-key="form-button">
-                            Üzenet küldése
-                        </button>
-                        <div id="form-message-success" class="mt-4 text-center text-green-600 font-semibold hidden" data-lang-key="form-success">
-                            Köszönjük az üzenetedet! Hamarosan válaszolunk.
-                        </div>
-                    </form>
-                </div>
-                <!-- Placeholder for Map -->
-                <div>
-                    <div class="h-[400px] bg-pink-200 flex items-center justify-center rounded-xl shadow-xl">
-                        <span class="text-pink-800 text-2xl font-semibold text-center" data-lang-key="map-image-text">Oktogon, Budapest Térképe</span>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-12" data-lang-key="faq-heading">Gyakran Ismételt Kérdések</h2>
+            <ul class="text-left max-w-2xl mx-auto space-y-8">
+                <li>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q1">Milyen telefontokokat lehet díszíteni?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a1">Minden workshopunkon lehetőséged van a legnépszerűbb iPhone és Samsung modellekre tervezni. Kérjük, érdeklődj Instagramon, ha más telefontípushoz szeretnél tokot készíteni!</p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q2">Kell előre foglalni?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a2">Igen, a helyek korlátozottak, ezért javasoljuk, hogy előre foglalj helyet Instagramon keresztül, különösen hétvégén.</p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q3">Mennyi ideig tart egy workshop?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a3">Általában egy workshop körülbelül 1.5-2 órát vesz igénybe, de a saját tempódban dolgozhatsz!</p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q4">Lehet enni vagy inni a műhelyben?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a4">Igen, szívesen látunk, ha hozol magaddal italokat és harapnivalókat. Kérjük, tartsd tisztán a munkafelületet!</p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q5">Milyen anyagok állnak rendelkezésre?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a5">Széles választékban kínálunk dekorációs elemeket, mint például gyöngyök, matricák, glitterek és különböző színes szalagok, amikkel egyedi tokot készíthetsz.</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -165,13 +159,14 @@
     <footer class="bg-pink-600 text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2024 Tokyo. Minden jog fenntartva.</p>
-            <p class="mt-2" data-lang-key="footer-address">Oktogon, Budapest, Magyarország</p>
+            <p class="mt-2 text-sm" data-lang-key="footer-contact">Érdeklődés esetén keress minket Instagramon!</p>
+            <p class="mt-2 text-sm" data-lang-key="footer-hours">Nyitvatartás: Hétfő-Vasárnap, 10:00-20:00</p>
             <div class="flex justify-center space-x-4 mt-4">
                 <a href="#" class="hover:text-pink-200 transition duration-300">Instagram</a>
-                <a href="#" class="hover:text-pink-200 transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-pink-200 transition duration-300">TikTok</a>
             </div>
         </div>
-    </section>
+    </footer>
 
     <!-- JavaScript for smooth scrolling and mobile menu & language toggle -->
     <script>
@@ -181,12 +176,12 @@
                     'nav-about': 'Rólunk',
                     'nav-services': 'Szolgáltatások',
                     'nav-gallery': 'Galéria',
-                    'nav-contact': 'Kapcsolat',
+                    'nav-faq': 'GYIK',
                     'hero-heading': 'Engedd szabadjára a kreativitásodat!',
                     'hero-subheading': 'Tervezd meg és készítsd el saját, egyedi, koreai stílusú telefontokodat a szórakoztató és barátságos műhelyünkben.',
-                    'hero-button': 'Foglalj időpontot',
+                    'hero-button': 'Tudj meg többet',
                     'about-heading': 'Rólunk',
-                    'about-text': 'A Tokyo egy kreatív hely, ahol személyre szabott kiegészítőket készíthetsz. A pezsgő és művészi szöuli kultúra inspirálta, minden eszközt, anyagot és útmutatást biztosítunk, amire szükséged van egy egyedi telefontok elkészítéséhez, amely tökéletesen kifejezi a stílusodat. Hozd el barátaidat, családodat, vagy gyere egyedül, és találkozz más kézműves-kedvelőkkel!',
+                    'about-text': 'Szia! Mi vagyunk Magyar Barbi és Csecse Attila, a Tokyo megálmodói. Koreában töltött időnk alatt beleszerettünk az ottani, személyre szabott telefontok-készítő műhelyek hangulatába és kreatív élményébe. Úgy éreztük, ezt a szórakoztató és egyedi lehetőséget nektek is látnotok kell! Ezért döntöttünk úgy, hogy elhozzuk ezt a koncepciót Budapestre. Gyere el és alkoss velünk egy olyan telefontokot, ami valóban rólad szól!',
                     'about-image-text': 'Kreatív Műhely',
                     'services-heading': 'Szolgáltatásaink',
                     'service1-title': 'DIY Műhelyek',
@@ -200,25 +195,31 @@
                     'gallery-image2-text': 'Aranyos Dekorációk',
                     'gallery-image3-text': 'Csillogó Minták',
                     'gallery-image4-text': 'Egyedi Kiegészítők',
-                    'contact-heading': 'Kapcsolatfelvétel',
-                    'form-name': 'Név',
-                    'form-email': 'E-mail',
-                    'form-message': 'Üzenet',
-                    'form-button': 'Üzenet küldése',
-                    'form-success': 'Köszönjük az üzenetedet! Hamarosan válaszolunk.',
-                    'map-image-text': 'Oktogon, Budapest Térképe',
-                    'footer-address': 'Oktogon, Budapest, Magyarország'
+                    'faq-heading': 'Gyakran Ismételt Kérdések',
+                    'faq-q1': 'Milyen telefontokokat lehet díszíteni?',
+                    'faq-a1': 'Minden workshopunkon lehetőséged van a legnépszerűbb iPhone és Samsung modellekre tervezni. Kérjük, érdeklődj Instagramon, ha más telefontípushoz szeretnél tokot készíteni!',
+                    'faq-q2': 'Kell előre foglalni?',
+                    'faq-a2': 'Igen, a helyek korlátozottak, ezért javasoljuk, hogy előre foglalj helyet Instagramon keresztül, különösen hétvégén.',
+                    'faq-q3': 'Mennyi ideig tart egy workshop?',
+                    'faq-a3': 'Általában egy workshop körülbelül 1.5-2 órát vesz igénybe, de a saját tempódban dolgozhatsz!',
+                    'faq-q4': 'Lehet enni vagy inni a műhelyben?',
+                    'faq-a4': 'Igen, szívesen látunk, ha hozol magaddal italokat és harapnivalókat. Kérjük, tartsd tisztán a munkafelületet!',
+                    'faq-q5': 'Milyen anyagok állnak rendelkezésre?',
+                    'faq-a5': 'Széles választékban kínálunk dekorációs elemeket, mint például gyöngyök, matricák, glitterek és különböző színes szalagok, amikkel egyedi tokot készíthetsz.',
+                    'footer-contact': 'Érdeklődés esetén keress minket Instagramon!',
+                    'footer-hours': 'Nyitvatartás: Hétfő-Vasárnap, 10:00-20:00',
+                    'hero-button': 'Tudj meg többet'
                 },
                 'en': {
                     'nav-about': 'About',
                     'nav-services': 'Services',
                     'nav-gallery': 'Gallery',
-                    'nav-contact': 'Contact',
+                    'nav-faq': 'FAQ',
                     'hero-heading': 'Unleash Your Creativity!',
                     'hero-subheading': 'Design and create your own unique, Korean-style phone case at our fun and friendly workshop.',
-                    'hero-button': 'Book a Workshop',
+                    'hero-button': 'Learn More',
                     'about-heading': 'About Us',
-                    'about-text': 'Tokyo is a creative space where you can make personalized accessories. Inspired by the vibrant and artistic culture of Seoul, we provide all the tools, materials, and guidance you need to craft a one-of-a-kind phone case that perfectly expresses your style. Bring your friends, your family, or come solo and meet other craft lovers!',
+                    'about-text': 'Hi! We are Barbi Magyar and Attila Csecse, the founders of Tokyo. During our time in Korea, we fell in love with the atmosphere and creative experience of the DIY phone case workshops there. We felt that you also had to see this fun and unique opportunity! That\'s why we decided to bring this concept to Budapest. Come and create a phone case with us that truly speaks for you!',
                     'about-image-text': 'Creative Workshop',
                     'services-heading': 'Our Services',
                     'service1-title': 'DIY Workshops',
@@ -232,14 +233,20 @@
                     'gallery-image2-text': 'Cute Decorations',
                     'gallery-image3-text': 'Glitter Designs',
                     'gallery-image4-text': 'Unique Accessories',
-                    'contact-heading': 'Get in Touch',
-                    'form-name': 'Name',
-                    'form-email': 'Email',
-                    'form-message': 'Message',
-                    'form-button': 'Send Message',
-                    'form-success': 'Thank you for your message! We\'ll get back to you soon.',
-                    'map-image-text': 'Map of Oktogon, Budapest',
-                    'footer-address': 'Oktogon, Budapest, Hungary'
+                    'faq-heading': 'Frequently Asked Questions',
+                    'faq-q1': 'What kind of phone cases can I decorate?',
+                    'faq-a1': 'In all of our workshops, you have the opportunity to design cases for the most popular iPhone and Samsung models. Please contact us on Instagram if you would like to make a case for a different phone type!',
+                    'faq-q2': 'Do I need to book in advance?',
+                    'faq-a2': 'Yes, spots are limited, so we recommend you book your spot in advance via Instagram, especially on weekends.',
+                    'faq-q3': 'How long does a workshop last?',
+                    'faq-a3': 'A workshop typically takes about 1.5-2 hours, but you are welcome to work at your own pace!',
+                    'faq-q4': 'Can I bring food or drinks to the workshop?',
+                    'faq-a4': 'Yes, you are welcome to bring your own drinks and snacks. We just ask that you please keep your workspace clean!',
+                    'faq-q5': 'What materials are available?',
+                    'faq-a5': 'We offer a wide selection of decorative elements such as beads, stickers, glitter, and various colorful ribbons to create a unique case.',
+                    'footer-contact': 'For inquiries, please contact us on Instagram!',
+                    'footer-hours': 'Opening Hours: Monday-Sunday, 10:00-20:00',
+                    'hero-button': 'Learn More'
                 }
             };
             
@@ -262,9 +269,7 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const langButton = document.getElementById('lang-button');
             const navLinks = document.querySelectorAll('a[href^="#"]');
-            const contactForm = document.getElementById('contact-form');
-            const formMessage = document.getElementById('form-message-success');
-
+            
             // Toggle mobile menu
             menuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
@@ -290,18 +295,6 @@
                 const newLang = currentLang === 'hu' ? 'en' : 'hu';
                 localStorage.setItem('lang', newLang);
                 updateLanguage(newLang);
-            });
-
-            // Handle form submission
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // In a real application, you would send this data to a server.
-                // For this example, we'll just show a success message.
-                formMessage.classList.remove('hidden');
-                contactForm.reset();
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
             });
             
             // Initial language check
