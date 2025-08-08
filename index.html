@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokyo - DIY Telefontok Műhely</title>
+    <title>TOKYO Budapest</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font and scroll behavior */
+        /* Custom font and soft gradient background */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
@@ -15,6 +15,23 @@
             /* Added a soft, girly gradient for the background */
             background-image: linear-gradient(to bottom, #fde4e4, #fff0f0);
             background-attachment: fixed; /* Ensures the gradient stays in place on scroll */
+        }
+        /* Custom styling for the iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -24,13 +41,14 @@
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Logo/Brand Name -->
-            <a href="#hero" class="text-3xl font-bold text-pink-600">Tokyo</a>
+            <a href="#hero" class="text-3xl font-bold text-pink-600">TOKYO</a>
             <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-about">Rólunk</a>
                 <a href="#services" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-services">Szolgáltatások</a>
                 <a href="#gallery" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-gallery">Galéria</a>
                 <a href="#faq" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-faq">GYIK</a>
+                <a href="#booking" class="text-gray-600 hover:text-pink-500 transition duration-300" data-lang-key="nav-booking">Foglalás</a>
             </div>
             <!-- Language and Mobile Menu -->
             <div class="flex items-center space-x-4">
@@ -47,7 +65,8 @@
             <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-about">Rólunk</a>
             <a href="#services" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-services">Szolgáltatások</a>
             <a href="#gallery" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-gallery">Galéria</a>
-                <a href="#faq" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-faq">GYIK</a>
+            <a href="#faq" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-faq">GYIK</a>
+            <a href="#booking" class="block px-6 py-2 text-gray-600 hover:bg-pink-100 transition duration-300" data-lang-key="nav-booking">Foglalás</a>
         </div>
     </header>
 
@@ -56,7 +75,7 @@
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-pink-600 mb-4 animate-fade-in-up" data-lang-key="hero-heading">Engedd szabadjára a kreativitásodat!</h1>
             <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-100" data-lang-key="hero-subheading">
-                Tervezd meg és készítsd el saját, egyedi, koreai stílusú telefontokodat a szórakoztató és barátságos műhelyünkben.
+                Tervezd meg és készítsd el saját, egyedi, telefontokodat a szórakoztató és barátságos műhelyünkben.
             </p>
             <a href="#about" class="bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 transform hover:scale-105 transition-all duration-300" data-lang-key="hero-button">
                 Tudj meg többet
@@ -70,12 +89,12 @@
             <div class="md:w-1/2 md:pr-10">
                 <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-4" data-lang-key="about-heading">Rólunk</h2>
                 <p class="text-gray-700 text-lg" data-lang-key="about-text">
-                    Szia! Mi vagyunk Magyar Barbi és Csecse Attila, a Tokyo megálmodói. Koreában töltött időnk alatt beleszerettünk az ottani, személyre szabott telefontok-készítő műhelyek hangulatába és kreatív élményébe. Úgy éreztük, ezt a szórakoztató és egyedi lehetőséget nektek is látnotok kell! Úgy döntöttünk, ezt az élményt Budapestre is elhozzuk. Itt te vagy a designer, mi pedig segítünk, hogy a tokod tényleg rólad szóljon.
+                    Koreában töltött időnk alatt beleszerettünk az ottani, személyre szabott telefontok-készítő műhelyek hangulatába és kreatív élményébe. Úgy éreztük, ezt a szórakoztató és egyedi lehetőséget nektek is látnotok kell! Ezért döntöttünk úgy, hogy elhozzuk ezt a koncepciót Budapestre. Gyere el és alkoss velünk egy olyan telefontokot, ami valóban rólad szól!
                 </p>
             </div>
             <div class="md:w-1/2 mt-8 md:mt-0">
                 <!-- A felettetek álló kreatív műhelyt bemutató kép feltöltése ide. Helyi fájlt is használhatsz, csak ügyelj a helyes elérési útvonalra. -->
-                <img src="barbiati.jpg" alt="Egy kép rólunk" class="rounded-xl shadow-xl w-full h-auto">
+                <img src="profkep.png" alt="Mi" class="rounded-xl shadow-xl w-full h-auto">
             </div>
         </div>
     </section>
@@ -93,12 +112,12 @@
                 <!-- Service Card 2 -->
                 <div class="bg-pink-100 p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-semibold mb-2" data-lang-key="service2-title">Egyedi Tervezés</h3>
-                    <p class="text-gray-700" data-lang-key="service2-text">Nem tudsz eljönni egy műhelybe? Létrehozunk neked egy egyedi tervezésű telefontokot az ötleteid alapján.</p>
+                    <p class="text-gray-700" data-lang-key="service2-text">TEST</p>
                 </div>
                 <!-- Service Card 3 -->
                 <div class="bg-pink-100 p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-xl font-semibold mb-2" data-lang-key="service3-title">Privát Partik</h3>
-                    <p class="text-gray-700" data-lang-key="service3-text">Ünnepeld a születésnapokat, lánybúcsúkat vagy csapatépítő eseményeket egy privát műhely keretében.</p>
+                    <p class="text-gray-700" data-lang-key="service3-text">TEST</p>
                 </div>
             </div>
         </div>
@@ -110,7 +129,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-12" data-lang-key="gallery-heading">Galériánk</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Színes telefontokokról készült kép feltöltése ide. -->
-                <img src="galeria1.jpg.png" alt="A collection of colorful phone cases" class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 w-full h-64 object-cover">
+                <img src="your-gallery-image-1.jpg" alt="A collection of colorful phone cases" class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 w-full h-64 object-cover">
                 <!-- Aranyos dekorációkkal díszített telefontokokról készült kép feltöltése ide. -->
                 <img src="your-gallery-image-2.jpg" alt="Cute decorative phone cases" class="rounded-xl shadow-md hover:scale-105 transition-transform duration-300 w-full h-64 object-cover">
                 <!-- Csillogó, egyedi mintás telefontokokról készült kép feltöltése ide. -->
@@ -128,34 +147,47 @@
             <ul class="text-left max-w-2xl mx-auto space-y-8">
                 <li>
                     <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q1">Milyen telefontokokat lehet díszíteni?</h3>
-                    <p class="text-gray-700" data-lang-key="faq-a1">Minden workshopunkon lehetőséged van a legnépszerűbb iPhone és Samsung modellekre tervezni. Kérjük, érdeklődj Instagramon, ha más telefontípushoz szeretnél tokot készíteni!</p>
+                    <p class="text-gray-700" data-lang-key="faq-a1">📱 Elérhető telefontokok: iPhone X/XS, iPhone XR, iPhone XS Max, iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 , iPhone 12 Pro, iPhone 12 Pro Max, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 14, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max, iPhone 16, iPhone 16 Pro, iPhone 16 Pro Max, Samsung A12, Samsung A13, Samsung A14, Samsung A15, Samsung A16, Samsung A21, Samsung A22, Samsung A23, Samsung A24, Samsung S20, Samsung S20 Plus, Samsung S20 Ultra, Samsung S23, Samsung S23 Ultra, Samsung S24, Samsung S25, Samsung S25 Ultra, Huawei P30 Lite, Huawei P30, Redmi Note 13 4G, Redmi Note 13 5G, Redmi Note 13 Pro 4G, Redmi Note 13 Pro 5G
+
+❗ A megjegyzésbe kérlek írd meg, hogy milyen telefonod van!</p>
                 </li>
                 <li>
                     <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q2">Kell előre foglalni?</h3>
-                    <p class="text-gray-700" data-lang-key="faq-a2">Igen, a helyek korlátozottak, ezért javasoljuk, hogy előre foglalj helyet Instagramon keresztül, különösen hétvégén.</p>
+                    <p class="text-gray-700" data-lang-key="faq-a2">Igen, a helyek korlátozottak, ezért javasoljuk, hogy előre foglalj helyet A foglalási rendszerünkön keresztül.</p>
                 </li>
                 <li>
                     <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q3">Mennyi ideig tart egy workshop?</h3>
                     <p class="text-gray-700" data-lang-key="faq-a3">Általában egy workshop körülbelül 1.5-2 órát vesz igénybe, de a saját tempódban dolgozhatsz!</p>
                 </li>
                 <li>
-                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q4">Lehet enni vagy inni a műhelyben?</h3>
-                    <p class="text-gray-700" data-lang-key="faq-a4">Igen, szívesen látunk, ha hozol magaddal italokat és harapnivalókat. Kérjük, tartsd tisztán a munkafelületet!</p>
+                    <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q4">Mennyibe kerül?</h3>
+                    <p class="text-gray-700" data-lang-key="faq-a4">9 990 Ft tokonként.</p>
                 </li>
                 <li>
                     <h3 class="text-xl font-semibold text-pink-500 mb-2" data-lang-key="faq-q5">Milyen anyagok állnak rendelkezésre?</h3>
-                    <p class="text-gray-700" data-lang-key="faq-a5">Széles választékban kínálunk dekorációs elemeket, mint például gyöngyök, matricák, glitterek és különböző színes szalagok, amikkel egyedi tokot készíthetsz.</p>
+                    <p class="text-gray-700" data-lang-key="faq-a5">💖 Válaszd ki a számodra tetsző színű ragasztót, majd a több mint 250+ fajta charmmal dekoráld kedved szerint!</p>
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-12" data-lang-key="booking-heading">Foglalás</h2>
+            <div class="mx-auto rounded-xl shadow-xl overflow-hidden iframe-container">
+                <!-- Change the `src` attribute below to your actual booking page URL -->
+                <iframe src="https://app.minup.io/book/tokyo/events/c31b4b28-8f63-45ad-a3e7-34a5e8cddf2c" title="Online booking system"></iframe>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-pink-600 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Tokyo. Minden jog fenntartva.</p>
-            <p class="mt-2 text-sm" data-lang-key="footer-contact">Érdeklődés esetén keress minket Instagramon!</p>
-            <p class="mt-2 text-sm" data-lang-key="footer-hours">Nyitvatartás: Hétfő-Vasárnap, 10:00-20:00</p>
+            <p>&copy; 2025 TOKYO. Minden jog fenntartva.</p>
+            <p class="mt-2 text-sm" data-lang-key="footer-contact">📍 Helyszín: 1061, Budapest, Aradi utca 11.</p>
+            <p class="mt-2 text-sm" data-lang-key="footer-hours">Nyitvatartás: Szerda-Vasárnap, 10:00-20:00</p>
             <div class="flex justify-center space-x-4 mt-4">
                 <a href="#" class="hover:text-pink-200 transition duration-300">Instagram</a>
                 <a href="#" class="hover:text-pink-200 transition duration-300">TikTok</a>
@@ -172,6 +204,7 @@
                     'nav-services': 'Szolgáltatások',
                     'nav-gallery': 'Galéria',
                     'nav-faq': 'GYIK',
+                    'nav-booking': 'Foglalás',
                     'hero-heading': 'Engedd szabadjára a kreativitásodat!',
                     'hero-subheading': 'Tervezd meg és készítsd el saját, egyedi, koreai stílusú telefontokodat a szórakoztató és barátságos műhelyünkben.',
                     'hero-button': 'Tudj meg többet',
@@ -201,6 +234,7 @@
                     'faq-a4': 'Igen, szívesen látunk, ha hozol magaddal italokat és harapnivalókat. Kérjük, tartsd tisztán a munkafelületet!',
                     'faq-q5': 'Milyen anyagok állnak rendelkezésre?',
                     'faq-a5': 'Széles választékban kínálunk dekorációs elemeket, mint például gyöngyök, matricák, glitterek és különböző színes szalagok, amikkel egyedi tokot készíthetsz.',
+                    'booking-heading': 'Foglalás',
                     'footer-contact': 'Érdeklődés esetén keress minket Instagramon!',
                     'footer-hours': 'Nyitvatartás: Hétfő-Vasárnap, 10:00-20:00',
                     'hero-button': 'Tudj meg többet'
@@ -210,6 +244,7 @@
                     'nav-services': 'Services',
                     'nav-gallery': 'Gallery',
                     'nav-faq': 'FAQ',
+                    'nav-booking': 'Reservation',
                     'hero-heading': 'Unleash Your Creativity!',
                     'hero-subheading': 'Design and create your own unique, Korean-style phone case at our fun and friendly workshop.',
                     'hero-button': 'Learn More',
@@ -239,6 +274,7 @@
                     'faq-a4': 'Yes, you are welcome to bring your own drinks and snacks. We just ask that you please keep your workspace clean!',
                     'faq-q5': 'What materials are available?',
                     'faq-a5': 'We offer a wide selection of decorative elements such as beads, stickers, glitter, and various colorful ribbons to create a unique case.',
+                    'booking-heading': 'Reservation',
                     'footer-contact': 'For inquiries, please contact us on Instagram!',
                     'footer-hours': 'Opening Hours: Monday-Sunday, 10:00-20:00',
                     'hero-button': 'Learn More'
@@ -299,5 +335,3 @@
     </script>
 </body>
 </html>
-
-
