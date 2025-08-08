@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visszaszámlálás a bejelentésig:</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and soft gradient background */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to bottom, #fde4e4, #fff0f0);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center text-gray-800 p-6">
+
+    <div class="bg-white p-10 rounded-3xl shadow-2xl text-center max-w-lg w-full">
+        <h1 class="text-4xl md:text-5xl font-bold text-pink-600 mb-4 animate-pulse" data-lang-key="countdown-heading">Visszaszámlálás a bejelentésig!</h1>
+        <p class="text-lg text-gray-600 mb-8" data-lang-key="countdown-subheading">🤫 Hónapok óta titkoljuk… de már nem sokáig!</p>
+        
+        <div id="countdown-timer" class="text-4xl md:text-6xl font-bold text-pink-500 space-y-4">
+            <!-- Countdown timer will be injected here by JavaScript -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <div>
+                    <span id="days" class="block">00</span>
+                    <span class="text-base font-normal text-gray-500" data-lang-key="days-label">Nap</span>
+                </div>
+                <div>
+                    <span id="hours" class="block">00</span>
+                    <span class="text-base font-normal text-gray-500" data-lang-key="hours-label">Óra</span>
+                </div>
+                <div>
+                    <span id="minutes" class="block">00</span>
+                    <span class="text-base font-normal text-gray-500" data-lang-key="minutes-label">Perc</span>
+                </div>
+                <div>
+                    <span id="seconds" class="block">00</span>
+                    <span class="text-base font-normal text-gray-500" data-lang-key="seconds-label">Másodperc</span>
+                </div>
+            </div>
+        </div>
+
+        <p id="opening-soon" class="hidden text-xl mt-8 font-semibold text-green-500" data-lang-key="opening-soon-message">
+            Test
+        </p>
+    </div>
+
+    <!-- JavaScript for the countdown timer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the date we're counting down to (August 10th)
+            const targetDate = new Date("August 10, 2025 10:00:00").getTime();
+
+            // Update the count down every 1 second
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the corresponding elements
+                if (document.getElementById("days")) {
+                    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                }
+                if (document.getElementById("hours")) {
+                    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                }
+                if (document.getElementById("minutes")) {
+                    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                }
+                if (document.getElementById("seconds")) {
+                    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+                }
+
+                // If the count down is finished, write some text and stop the timer
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown-timer").innerHTML = "";
+                    document.getElementById("opening-soon").classList.remove("hidden");
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
